@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-light-grey w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>Flight</b> TO THE MONE</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Tour Section -->
+    <div id="tour">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:1000px">
+            <h2 class="w3-wide w3-center">Result of the research</h2>
+            <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+
+            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                <% if(offers.length!=0){ let i=1; offers.forEach(function(data){ %>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="../images/Av.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-light-grey">
+
+                            <p><b>Royal Air</b></p>
+                            <p><b>FROM :</b>
+                                <%=data.lieu_depart %>
+                            </p>
+                            <p><b>TO :</b>
+                                <%=data.lieu_d_arriver %>
+                            </p>
+                            <p class="w3-opacity">
+                                <%=data.date %>
+                            </p>
+                            <button class="w3-button w3-black w3-margin-bottom"
+                                onclick="document.getElementById('contact').style.display='block'">Buy
+                                Tickets</button>
+                        </div>
+                    </div>
+                    <% i++; }) %>
+                        <% } else{ %>
+                            <div class="w3-container">
+
+                                <div class="w3-card-4" style="width:50%;">
+
+                                    <div class="w3-container">
+                                        <p>No Data Found</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <% } %>
+                                <!-- <div class="w3-third w3-margin-bottom">
+                    <img src="../images/Av.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-light-grey">
+                        <p><b>Paris</b></p>
+                        <p class="w3-opacity">Sat 28 Nov 2016</p>
+                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button class="w3-button w3-black w3-margin-bottom"
+                            onclick="document.getElementById('contact').style.display='block'">Buy Tickets</button>
+                    </div>
+                </div> -->
+                                <!-- <div class="w3-third w3-margin-bottom">
+                    <img src="../images/Av.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-light-grey">
+                        <p><b>San Francisco</b></p>
+                        <p class="w3-opacity">Sun 29 Nov 2016</p>
+                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button class="w3-button w3-black w3-margin-bottom"
+                            onclick="document.getElementById('contact').style.display='block'">Buy Tickets</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Contact Modal -->
+    <div id="contact" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-black">
+                <span onclick="document.getElementById('contact').style.display='none'"
+                    class="w3-button w3-display-topright w3-large">x</span>
+                <h1>Register</h1>
+            </div>
+
+            <div class="w3-container">
+                <p>Complete the Information to Book</p>
+                <form action="/users/add" method="POST" target="_blank">
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required
+                            name="FName"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required
+                            name="LName"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="tel" placeholder="Contact" required
+                            name="Contact"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required
+                            name="Email"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password" required
+                            name="Password"></p>
+                    <p><button class="w3-button" type="submit">SEND</button></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
