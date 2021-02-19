@@ -46,9 +46,9 @@
                             <p class="w3-opacity">
                                 <%=data.date %>
                             </p>
-                            <button class="w3-button w3-black w3-margin-bottom"
-                                onclick="document.getElementById('contact').style.display='block'">Buy
-                                Tickets</button>
+                            <button class="w3-button w3-black w3-margin-bottom" > 
+                                    <a href="/register">Buy Tickets</a>
+                            </button>
                         </div>
                     </div>
                     <% i++; }) %>
@@ -64,56 +64,11 @@
                                 </div>
                             </div>
                             <% } %>
-                                <!-- <div class="w3-third w3-margin-bottom">
-                    <img src="../images/Av.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-light-grey">
-                        <p><b>Paris</b></p>
-                        <p class="w3-opacity">Sat 28 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button class="w3-button w3-black w3-margin-bottom"
-                            onclick="document.getElementById('contact').style.display='block'">Buy Tickets</button>
-                    </div>
-                </div> -->
-                                <!-- <div class="w3-third w3-margin-bottom">
-                    <img src="../images/Av.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-                    <div class="w3-container w3-light-grey">
-                        <p><b>San Francisco</b></p>
-                        <p class="w3-opacity">Sun 29 Nov 2016</p>
-                        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button class="w3-button w3-black w3-margin-bottom"
-                            onclick="document.getElementById('contact').style.display='block'">Buy Tickets</button>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-    <!-- Contact Modal -->
-    <div id="contact" class="w3-modal">
-        <div class="w3-modal-content w3-animate-zoom">
-            <div class="w3-container w3-black">
-                <span onclick="document.getElementById('contact').style.display='none'"
-                    class="w3-button w3-display-topright w3-large">x</span>
-                <h1>Register</h1>
-            </div>
 
-            <div class="w3-container">
-                <p>Complete the Information to Book</p>
-                <form action="/users/add" method="POST" target="_blank">
-                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required
-                            name="FName"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required
-                            name="LName"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="tel" placeholder="Contact" required
-                            name="Contact"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required
-                            name="Email"></p>
-                    <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password" required
-                            name="Password"></p>
-                    <p><button class="w3-button" type="submit">SEND</button></p>
-                </form>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
