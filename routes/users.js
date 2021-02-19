@@ -13,8 +13,8 @@ const Op = Sequelize.Op;
 //     }))
 //     .catch(err => res.render('error', { error: err })
 //     ));
-router.get('/register', (req, res) => {
-    res.render('views');
+router.get('/add', (req, res) => {
+    res.render('register');
 });
 // router.get('/', (req, res) => {
 //     res.render('register');
