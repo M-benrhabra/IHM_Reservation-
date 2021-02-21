@@ -6,13 +6,14 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 // Get Ticket 
-// router.get('/', (req, res) =>
-// User.findAll()
-//     .then(users => res.render('users', {
-//         users
-//     }))
-//     .catch(err => res.render('error', { error: err })
-//     ));
+router.get('/', (req, res) =>
+    User.findAll()
+        .then(users => res.render('users', {
+            users
+        }))
+        .catch(err => res.render('error', { error: err })
+        ));
+
 router.get('/add', (req, res) => {
     res.render('register');
 });
@@ -21,18 +22,17 @@ router.get('/add', (req, res) => {
 // });
 
 router.post('/add', (req, res) => {
-    let { FName, LName, Contact, Email, Password } = req.body;
-
     // Insert into table
     User.create({
-        firstName: FName,
-        lastName: LName,
-        contact: Contact,
-        email: Email,
-        password: Password
+        firstName: req.body.FName,
+        lastName: req.body.LName,
+        contact: req.body.Contact,
+        email: req.body.Email,
+        password: req.body.Password
     })
-        .then(user => res.redirect('register'))
+        .then(user => res.redirect('/users/add'))
         .catch(err => res.render('error', { error: err.message }))
 });
+
 
 module.exports = router; 

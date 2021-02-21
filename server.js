@@ -1,8 +1,11 @@
+const createError = require('http-errors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql2 = require('mysql2');
 const path = require('path');
 const app = express();
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
 // Database
 const sequelizeDb = require('./config/database');
@@ -13,7 +16,8 @@ sequelizeDb.authenticate()
 
 // app.get("/", (req, res) =>
 //     res.send("Welcome.")
-// );
+// // );
+app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json())
 app.set('views', path.join(__dirname, 'views'))
@@ -24,6 +28,8 @@ app.use(express.static("public"));
 app.get('/', function (req, res) {
     res.render('index1');
 });
+
+
 
 // Offers routes
 app.use('/offers', require('./routes/offers'));
