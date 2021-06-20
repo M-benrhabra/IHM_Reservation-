@@ -1,0 +1,47 @@
+<%- include('includes/head.ejs') %>
+
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <%- include('includes/navbar.ejs') %> 
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1920px;" id="home">
+        <img class="w3-image" src="../images/avion.jpg" alt="Architecture" width="100%" height="100%">
+        <!-- <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span
+                    class="w3-hide-small w3-text-light-grey">Architects</span></h1>
+        </div> -->
+        <div class="w3-display-middle" style="width:65%">
+            <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><i
+                        class="fa fa-plane w3-margin-right"></i>Flight</button>
+            </div>
+
+            <!-- Tabs -->
+            <div id="Flight" class="w3-container w3-border w3-border-black w3-padding-16 myLink">
+                <form action="/airline/offer">
+                    <h3>Travel the world with us</h3>
+                    <div class="w3-row-padding" style="margin:0 -16px;">
+                        <div class="w3-half">
+                            <label>From</label>
+                            <input class="w3-input w3-border" type="search" name="LieuDepart"
+                                placeholder="Departing from">
+                        </div>
+                        <div class="w3-half">
+                            <label>To</label>
+                            <input class="w3-input w3-border" type="search" name="LieuArriver"
+                                placeholder="Arriving at">
+                        </div>
+                        <div class="w3-half">
+                            <label>DAAE</label>
+                            <input class="w3-input w3-border" type="date" name="SDate">
+                        </div>
+                    </div>
+                    <p><button type="submit" class="w3-button w3-dark-grey">Search and find dates</button></p>
+                </form>
+            </div>
+        </div>
+    </header>
+    <%- include('includes/footer.ejs') %> 

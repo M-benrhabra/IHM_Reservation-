@@ -1,0 +1,41 @@
+<%- include('includes/head.ejs') %>
+
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <%- include('includes/navbar.ejs') %> 
+
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1920px;" id="home">
+        <img class="w3-image" src="../images/world2.jpg" alt="Architecture" width="100%" height="50%">
+
+
+        <div class="w3-container w3-content w3-padding-64 w3-display-middle" style="margin: 36px auto; width:70%">
+            <div class="w3-card-4" style="width:70%">
+                <header class="w3-container w3-light-grey">
+                    <h3>Register</h3>
+                </header>
+                <div class="w3-container">
+                    <p>Complete the Information to Book</p>
+                    <hr>
+                    <form action="/users/addUser" method="POST" target="_blank">
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required
+                                name="FName"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required
+                                name="LName"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="tel" placeholder="Contact" required
+                                name="Contact"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required
+                                name="Email"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password"
+                                required name="Password"></p>
+                        <hr>
+                        <p><button class="w3-button w3-gray" type="submit">SEND</button></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <%- include('includes/footer.ejs') %> 
